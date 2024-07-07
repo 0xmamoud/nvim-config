@@ -12,7 +12,7 @@ Install nvchad v2.0 and clone this repository in the lua folder
   git clone https://github.com/0xmamoud/nvim-config custom
 ```
 
-Dont forgot to run mason to install all languages server
+Don't forgot to run mason to install all languages server
 ```bash
   MasonInstallAll
 ```
