@@ -1,7 +1,7 @@
 
 # Neovim config
 
-a simple Neovim config for C/CPP and web development (preter, eslint, tailwind-css, ts...).
+a simple Neovim config built on top of nvchad for C/CPP and web development (preter, eslint, tailwind-css, ts...).
 
 ## Installation
 
