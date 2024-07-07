@@ -17,3 +17,7 @@ Don't forgot to run mason to install all languages server
   MasonInstallAll
 ```
 
+for C/CPP auto suggestion, run 
+```bash
+  TSIntall cpp
+```

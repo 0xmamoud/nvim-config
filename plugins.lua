@@ -7,6 +7,44 @@ local plugins = {
     end,
   },
   {
+    "rcarriga/nvim-dap-ui",
+    "nvim-neotest/nvim-nio",
+    event = "VeryLazy",
+    dependencies = "mfussenegger/nvim-dap",
+    config = function()
+      local dap = require("dap")
+      local dapui = require("dapui")
+      dapui.setup()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    end
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    opts = {
+      handlers = {
+      }
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+    config = function(_, _)
+      require("core.utils").load_mappings("dap")
+    end
+  },
+  {
     "mhartington/formatter.nvim",
     event = "VeryLazy",
     opts = function()
@@ -24,6 +62,9 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "codelldb",
+        "clang-format",
+        "clangd",
         "eslint-lsp",
         "prettierd",
         "tailwindcss-language-server",
