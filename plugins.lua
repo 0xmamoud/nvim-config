@@ -7,6 +7,20 @@ local plugins = {
     end,
   },
   {
+    "mhartington/formatter.nvim",
+    event = "VeryLazy",
+    opts = function()
+      return require "custom.configs.formatter"
+    end
+  },
+  {
+    "mfussenegger/nvim-lint",
+    event = "VeryLazy",
+    config = function()
+      require "custom.configs.lint"
+    end
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
