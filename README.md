@@ -1,4 +1,8 @@
 
+# Neovim config
+
+a simple Neovim config for C/CPP and web development (preter, eslint, tailwind-css, ts...).
+
 ## Installation
 
 Install nvchad v2.0 and clone this repository in the lua folder
